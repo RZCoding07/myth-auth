@@ -27,7 +27,7 @@ class PwnedValidator extends BaseValidator implements ValidatorInterface
      *
      * @param Entity $user
      */
-    public function check(string $password, ?Entity $user = null): bool
+    public function check(string $password, $user = null): bool
     {
         $hashedPword = strtoupper(sha1($password));
         $rangeHash   = substr($hashedPword, 0, 5);
